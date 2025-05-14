@@ -1,0 +1,41 @@
+.content {
+  max-width: 1000px;      /* Chiều rộng lớn nhất (bạn có thể điều chỉnh 800→1000→1200px tùy ý) */
+  width: 100%;           /* Chiều rộng linh hoạt khi màn hình nhỏ hơn max-width */
+  margin: 0 auto;        /* Căn giữa theo chiều ngang */
+  padding: 2rem 1rem;    /* Khoảng đệm trên/dưới 2rem, trái/phải 1rem */
+  background: #f9fafb;   /* Giữ nền trắng nhạt cho vùng content */
+}
+
+/* Top navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  height: 60px;
+  background-color: #333;
+}
+.logo {
+  color: #2375d3;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover {
+  color: #fff;
+}
+.nav-links .active {
+  color: #5B8FF9;
+}

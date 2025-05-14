@@ -10,7 +10,7 @@ import {
   FiList
 } from 'react-icons/fi';
 import { NavLink, Outlet } from 'react-router-dom';
-import './Home.css';  // dùng lại CSS navbar + content
+import './global.css'; // dùng lại CSS cho các icon
 
 export default function Layout() {
   return (

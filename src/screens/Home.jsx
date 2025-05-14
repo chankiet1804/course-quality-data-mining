@@ -10,6 +10,7 @@ import {
 } from 'react-icons/fi';
 import { NavLink, Outlet } from 'react-router-dom';
 import './Home.css';
+import './global.css'; // dùng lại CSS cho các icon
 
 export default function Home() {
   const members = [
