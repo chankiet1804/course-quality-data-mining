@@ -1,17 +1,8 @@
-/* Reset & background */
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #f0f2f5 0%, #e2e8f0 100%);
-  font-family: 'Inter', sans-serif;
-}
-
-
 
 /* Main content area */
-.content {
-  padding: 2rem;
+.container {
+  max-width: 100%;
+  padding: 1rem;
   background: #f9fafb;
 }
 

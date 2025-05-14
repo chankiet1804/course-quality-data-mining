@@ -9,8 +9,8 @@ import {
   FiList
 } from 'react-icons/fi';
 import { NavLink, Outlet } from 'react-router-dom';
-import './Home.css';
-import './global.css'; // dùng lại CSS cho các icon
+import './css/Home.css';
+
 
 export default function Home() {
   const members = [
@@ -99,7 +99,7 @@ Việc giải quyết bài toán này không chỉ giúp người học có cơ 
   return (
     <>
       {/* Main Content Area */}
-      <main className="content">
+      <main className="container">
         <header className="home-header">
           <div className="home-header-title">
             <FiArchive className="header-icon" />

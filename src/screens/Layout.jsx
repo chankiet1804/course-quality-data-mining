@@ -10,13 +10,16 @@ import {
   FiList
 } from 'react-icons/fi';
 import { NavLink, Outlet } from 'react-router-dom';
-import './global.css'; // dùng lại CSS cho các icon
+import './css/global.css'; 
 
 export default function Layout() {
   return (
-    <>
+    <div className="layout-wrapper">
       <header className="navbar">
+        
         <div className="logo">DATA MINING</div>
+        
+        
         <ul className="nav-links">
           <li><NavLink to="/" end>Trang chủ</NavLink></li>
           <li>
@@ -35,12 +38,13 @@ export default function Layout() {
             </NavLink>
           </li>
         </ul>
+        
       </header>
 
-      <main className="content">
+      <main className="container">
         {/* React Router sẽ render trang con ở đây */}
         <Outlet />
       </main>
-    </>
+     </div>
   );
 }
