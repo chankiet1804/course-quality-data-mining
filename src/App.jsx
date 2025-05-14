@@ -1,20 +1,26 @@
 // src/App.jsx
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from './screens/Home.jsx';
+import Layout   from './screens/Layout';
 import DatasetAnalysis from './screens/DatasetAnalysis.jsx';
 import ExperimentResults from './screens/ExperimentResults.jsx';
 import CourseDetail from './screens/CourseDetail.jsx';
 
 export default function App() {
   return (
-    <Router>
+
       <Routes>
-        <Route path="/*" element={<Home />} />
-        <Route path="/dataset"  element={<DatasetAnalysis />} />
-        <Route path="/results"  element={<ExperimentResults />} />
-        <Route path="/detail"   element={<CourseDetail />} />
+        {/* Route cha dùng Layout */}
+        <Route path="/" element={<Layout />}>
+          {/* Trang index (/) */}
+          <Route index      element={<Home />} />
+          <Route path="dataset"  element={<DatasetAnalysis />} />
+          <Route path="results"  element={<ExperimentResults />} />
+          <Route path="detail"   element={<CourseDetail />} />
+          {/* nếu cần thêm route con khác cũng chỉ cần thêm ở đây */}
+        </Route>
       </Routes>
-    </Router>
+
   );
 }

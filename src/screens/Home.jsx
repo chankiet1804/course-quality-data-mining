@@ -38,7 +38,9 @@ export default function Home() {
       color: '#5B8FF9',
       content: (
         <p>
-          Trong thời đại số hóa hiện nay, học trực tuyến đã trở thành xu hướng tất yếu...
+          Trong thời đại số hóa hiện nay, học trực tuyến đã trở thành xu hướng tất yếu trong giáo dục đại học và đào tạo từ xa. Tuy nhiên, cùng với sự bùng nổ về số lượng khóa học trên các nền tảng MOOCs (Massive Open Online Courses), câu hỏi đặt ra là: làm thế nào để đánh giá và đảm bảo chất lượng các khóa học một cách khách quan, hiệu quả và quy mô?
+Đề tài này tập trung vào việc ứng dụng các phương pháp học máy và phân tích dữ liệu để xây dựng mô hình dự đoán chất lượng khóa học trên nền tảng học trực tuyến. Thay vì chỉ dựa vào đánh giá thủ công hay số liệu thô, mô hình sẽ tổng hợp nhiều tiêu chí đa chiều như: bình luận của người học, điểm trung bình bài tập, uy tín giảng viên, xếp hạng cơ sở đào tạo, và tài nguyên học tập (video, bài tập...). Dữ liệu được trích xuất và xử lý từ hệ thống MOOCs, bao gồm hành vi học tập, lịch sử giảng dạy và tương tác của sinh viên.
+Với cách tiếp cận này, chúng tôi kỳ vọng cung cấp một khung đánh giá toàn diện và có khả năng mở rộng, góp phần nâng cao trải nghiệm học tập và hỗ trợ các nền tảng giáo dục trực tuyến cải tiến chất lượng giảng dạy một cách có hệ thống và dữ liệu hóa.
         </p>
       )
     },
@@ -60,7 +62,11 @@ export default function Home() {
       color: '#F6BD16',
       content: (
         <p>
-          Sự phát triển nhanh chóng của các nền tảng học trực tuyến như MOOCs...
+          Sự phát triển nhanh chóng của các nền tảng học trực tuyến như MOOCs đã tạo điều kiện cho hàng triệu người trên toàn thế giới tiếp cận tri thức một cách linh hoạt và tiết kiệm. Tuy nhiên, sự đa dạng và quy mô lớn của các khóa học cũng đặt ra thách thức trong việc đảm bảo chất lượng nội dung và trải nghiệm học tập cho người dùng.
+Trên thực tế, người học thường gặp khó khăn trong việc lựa chọn các khóa học phù hợp do thiếu thông tin rõ ràng và khách quan về chất lượng. Đồng thời, các nền tảng giáo dục cũng cần một hệ thống đánh giá tự động để hỗ trợ kiểm soát, cải thiện và đề xuất các khóa học hiệu quả hơn.
+Do đó, bài toán đặt ra là: Làm thế nào để xây dựng một mô hình có khả năng dự đoán chất lượng của các khóa học trực tuyến, dựa trên dữ liệu hành vi người học, nội dung khóa học, giảng viên và cơ sở đào tạo?
+Việc giải quyết bài toán này không chỉ giúp người học có cơ sở lựa chọn tốt hơn, mà còn hỗ trợ các nhà quản lý và giảng viên trong việc giám sát và cải tiến chất lượng đào tạo một cách chủ động, tự động và có cơ sở dữ liệu hỗ trợ.
+
         </p>
       )
     },
@@ -90,34 +96,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="layout">
-      {/* Top navigation bar */}
-      <header className="navbar">
-        <div className="logo">GFG</div>
-        <ul className="nav-links">
-          <li>
-            <NavLink to="/" end>
-              Trang chủ
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dataset" className={({ isActive }) => (isActive ? 'active' : '')}>
-              <FiBook /> Phân tích Dataset
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/results" className={({ isActive }) => (isActive ? 'active' : '')}>
-              <FiBarChart2 /> Kết quả Thực nghiệm
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/detail" className={({ isActive }) => (isActive ? 'active' : '')}>
-              <FiList /> Chi tiết Khóa học
-            </NavLink>
-          </li>
-        </ul>
-      </header>
-
+    <>
       {/* Main Content Area */}
       <main className="content">
         <header className="home-header">
@@ -130,7 +109,6 @@ export default function Home() {
           </p>
         </header>
 
-        {/* Cards Grid for Homepage */}
         <div className="card-grid">
           {cards.map((c, i) => (
             <section key={i} className="card">
@@ -140,16 +118,13 @@ export default function Home() {
                 </span>
                 <h2 style={{ color: c.color }}>{c.title}</h2>
               </div>
-              <div className="card-content">
-                {c.content}
-              </div>
+              <div className="card-content">{c.content}</div>
             </section>
           ))}
         </div>
 
-        {/* Render nested route components here */}
         <Outlet />
       </main>
-    </div>
+    </>
   );
 }
