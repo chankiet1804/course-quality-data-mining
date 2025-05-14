@@ -91,13 +91,13 @@ export default function Home() {
 
   return (
     <div className="layout">
-      {/* Sidebar Navigation */}
-      <nav className="sidebar">
-        <h2 className="sidebar-title"><FiArchive /> Menu</h2>
-        <ul className="sidebar-list">
+      {/* Top navigation bar */}
+      <header className="navbar">
+        <div className="logo">GFG</div>
+        <ul className="nav-links">
           <li>
-            <NavLink to="/" end className={({ isActive }) => (isActive ? 'active' : '')}>
-              <FiArchive /> Trang Chủ
+            <NavLink to="/" end>
+              Trang chủ
             </NavLink>
           </li>
           <li>
@@ -116,7 +116,7 @@ export default function Home() {
             </NavLink>
           </li>
         </ul>
-      </nav>
+      </header>
 
       {/* Main Content Area */}
       <main className="content">

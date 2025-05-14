@@ -4,6 +4,47 @@ html, body {
   padding: 0;
   height: 100%;
   background: linear-gradient(135deg, #f0f2f5 0%, #e2e8f0 100%);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Top navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  height: 60px;
+  background-color: #333;
+}
+.logo {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover {
+  color: #fff;
+}
+/* Active link style */
+.nav-links .active {
+  color: #5B8FF9;
+}
+
+/* Main content area */
+.content {
+  padding: 2rem;
 }
 
 .home-container {
