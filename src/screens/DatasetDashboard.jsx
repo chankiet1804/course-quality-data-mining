@@ -10,6 +10,10 @@ import CourseBySchoolChart from '../components/CourseBySchoolChart';
 import ExerciseVideoBar from '../components/ExerciseVideoBar';
 import StudentLineChart from '../components/StudentLineChart';
 import LabelCorrelationLineChart from '../components/LabelCorrelationLineChart';
+import CommentCorrelationCharts from '../components/CommentCorrelationCharts';
+
+import { fakeCourses } from '../data/fakeCourses'
+import { commentByLabel } from '../data/commentByLabel'; // Dữ liệu cho biểu đồ tương quan
 
 const tabs = ['Tổng quan', 'Phân tích đầu vào', 'Tương quan'];
 
@@ -29,15 +33,20 @@ export default function DatasetDashboard() {
         return (
           <>
             <NullValueBar />
-            <CommentPieChart />
-            <ScoreDistributionPlot />
+            {/* <CommentPieChart /> */}
+            <ScoreDistributionPlot courses={fakeCourses} />
             <CourseBySchoolChart />
             <ExerciseVideoBar />
             <StudentLineChart />
           </>
         );
       case 'Tương quan':
-        return <LabelCorrelationLineChart />;
+        return(
+        <>    
+          <LabelCorrelationLineChart />
+          <CommentCorrelationCharts commentByLabel={commentByLabel} />
+        </>
+        );
       default:
         return null;
     }

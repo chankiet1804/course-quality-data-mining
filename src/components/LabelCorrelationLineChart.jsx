@@ -5,11 +5,11 @@ import {
 } from 'recharts';
 
 const data = [
-  { star: 1, problem: 1.8, teacher: 2.2, comment: 15, ex: 5, vid: 3, student: 40 },
-  { star: 2, problem: 2.5, teacher: 2.7, comment: 25, ex: 7, vid: 4, student: 60 },
-  { star: 3, problem: 3.1, teacher: 3.4, comment: 32, ex: 8, vid: 5, student: 85 },
-  { star: 4, problem: 3.8, teacher: 4.1, comment: 38, ex: 10, vid: 6, student: 110 },
-  { star: 5, problem: 4.5, teacher: 4.7, comment: 45, ex: 12, vid: 7, student: 150 }
+  { star: 1, comment: 150, ex: 95, vid: 130, student: 90 },
+  { star: 2, comment: 189, ex: 170, vid: 97, student: 160 },
+  { star: 3, comment: 250, ex: 206, vid: 155, student: 85 },
+  { star: 4, comment: 278, ex: 199, vid: 206, student: 320 },
+  { star: 5, comment: 301, ex: 275, vid: 237, student: 210 }
 ];
 
 export default function LabelCorrelationLineChart() {
@@ -24,12 +24,11 @@ export default function LabelCorrelationLineChart() {
           <Tooltip />
           <Legend />
 
-          <Line type="monotone" dataKey="problem" stroke="#5B8FF9" name="Điểm bài tập" />
-          <Line type="monotone" dataKey="teacher" stroke="#61DDAA" name="Điểm giảng viên" />
-          <Line type="monotone" dataKey="comment" stroke="#F6BD16" name="Độ dài bình luận" />
-          <Line type="monotone" dataKey="ex" stroke="#E86452" name="Số bài tập" />
-          <Line type="monotone" dataKey="vid" stroke="#9B72AA" name="Số video" />
-          <Line type="monotone" dataKey="student" stroke="#FF9845" name="Số học viên" />
+          
+          <Line type="monotone" dataKey="comment" stroke="#F6BD16" name="Số lượng bình luận trung bình" />
+          <Line type="monotone" dataKey="ex" stroke="#E86452" name="Số bài tập trung bình" />
+          <Line type="monotone" dataKey="vid" stroke="#9B72AA" name="Số video trung bình" />
+          <Line type="monotone" dataKey="student" stroke="#FF9845" name="Số học viên trung bình" />
         </LineChart>
       </ResponsiveContainer>
     </div>

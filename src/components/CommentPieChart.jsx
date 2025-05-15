@@ -4,22 +4,25 @@ import {
   PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend,
 } from 'recharts';
 
-const commentData = [
-  { name: 'Tích cực', value: 62 },
-  { name: 'Trung lập', value: 24 },
-  { name: 'Tiêu cực', value: 14 }
-];
+// const commentData = [
+//   { name: 'Tích cực', value: 62 },
+//   { name: 'Trung lập', value: 24 },
+//   { name: 'Tiêu cực', value: 14 }
+// ];
 
 const COLORS = ['#61DDAA', '#F6BD16', '#E86452'];
 
-export default function CommentPieChart() {
+export default function CommentPieChart({ data, title }) {
+  // data = [{ name: 'Tích cực', value: 62 }, …]
+  // title = 'Label 1 sao', …
   return (
-    <div className="chart-box">
-      <h3>Phân bố cảm xúc bình luận</h3>
+    <div className="PieChartBox">
+      
+      <h3>{title}</h3>
       <ResponsiveContainer width="100%" height={300}>
         <PieChart>
           <Pie
-            data={commentData}
+            data={data}
             cx="50%"
             cy="50%"
             labelLine={false}
@@ -28,12 +31,12 @@ export default function CommentPieChart() {
             fill="#8884d8"
             dataKey="value"
           >
-            {commentData.map((entry, index) => (
+            {data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index]} />
             ))}
           </Pie>
           <Tooltip />
-          <Legend />
+          
         </PieChart>
       </ResponsiveContainer>
     </div>
