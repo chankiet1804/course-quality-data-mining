@@ -27,6 +27,11 @@ export default function Layout() {
               <FiBook /> Phân tích Dataset
             </NavLink>
           </li>
+          {/* <li>
+            <NavLink to="/dashboard" className={({isActive})=>isActive?'active':''}>
+              <FiList /> Dashboard dataset
+            </NavLink>
+          </li> */}
           <li>
             <NavLink to="/results" className={({isActive})=>isActive?'active':''}>
               <FiBarChart2 /> Kết quả Thực nghiệm
