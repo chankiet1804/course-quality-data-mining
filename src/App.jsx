@@ -7,7 +7,7 @@ import Layout   from './screens/Layout';
 import ExperimentResults from './screens/ExperimentResults.jsx';
 import CourseDetail from './screens/CourseDetail.jsx';
 import DatasetDashboard from './screens/DatasetDashboard.jsx';
-
+import DatasetOverview from './screens/DatasetOverview.jsx';
 export default function App() {
   return (
 
@@ -19,7 +19,7 @@ export default function App() {
           <Route path="dataset"  element={<DatasetDashboard />} />
           <Route path="results"  element={<ExperimentResults />} />
           <Route path="detail"   element={<CourseDetail />} />
-          
+          <Route path="/dataset-overview" element={<DatasetOverview />} />
           {/* nếu cần thêm route con khác cũng chỉ cần thêm ở đây */}
         </Route>
       </Routes>

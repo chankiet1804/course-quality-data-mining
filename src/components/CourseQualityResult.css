@@ -1,0 +1,133 @@
+.quality-result-window {
+  max-width: 570px;
+  background: #fff;
+  border-radius: 22px;
+  margin: 30px auto;
+  box-shadow: 0 6px 36px #bab8f233, 0 2px 8px #fff6;
+  padding-bottom: 16px;
+}
+.result-header {
+  background: #f3f4fc;
+  border-radius: 22px 22px 0 0;
+  padding: 14px 36px;
+  text-align: center;
+}
+.header-title {
+  color: #888;
+  font-weight: 600;
+  font-size: 1.14rem;
+  letter-spacing: 0.5px;
+}
+.result-content {
+  padding: 20px 32px 0 32px;
+}
+.result-content h2 {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+.result-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 14px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.1s;
+  border-radius: 10px;
+}
+.result-row:hover {
+  background: #f8f9fd;
+}
+.level-label {
+  width: 140px;
+  min-width: 110px;
+  font-weight: 600;
+  font-size: 1.03rem;
+  margin-right: 6px;
+}
+.result-bar-bg {
+  flex: 1;
+  height: 8px;
+  background: #e4e4e7;
+  border-radius: 6px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+.result-bar {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.6s;
+}
+.percent {
+  min-width: 38px;
+  font-weight: 600;
+  font-size: 1.06rem;
+  color: #232323;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: #0006;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: #fff;
+  border-radius: 16px;
+  max-width: 760px;
+  width: 98%;
+  max-height: 88vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 36px #0002, 0 1px 6px #fff9;
+  padding: 28px 34px 22px;
+  position: relative;
+  animation: popIn 0.28s cubic-bezier(.23,1.17,.38,0.92);
+}
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.96);}
+  to { opacity: 1; transform: scale(1);}
+}
+.modal-close {
+  position: absolute;
+  top: 13px;
+  right: 16px;
+  background: #fff;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: #888;
+  border-radius: 100%;
+  width: 32px;
+  height: 32px;
+}
+.criteria-block {
+  background: #f9f9fc;
+  border-radius: 8px;
+  padding: 14px 18px 10px;
+  margin-bottom: 12px;
+}
+.school-list-block {
+  margin-bottom: 12px;
+}
+.school-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 4px;
+}
+.school-table th, .school-table td {
+  border: 1px solid #eee;
+  padding: 0.52rem 0.8rem;
+  text-align: center;
+}
+.school-table th {
+  background: #f7f7fa;
+  font-weight: 600;
+}
+.feature-block ul {
+  margin: 0;
+  padding-left: 1.25em;
+}

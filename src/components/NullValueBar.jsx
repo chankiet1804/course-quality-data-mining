@@ -9,7 +9,8 @@ const nullData = [
   { field: 'comments', missing: 1 },
   { field: 'school_name', missing: 4 },
   { field: 'problem_scores', missing: 18 },
-  { field: 'student', missing: 2 }
+  { field: 'student', missing: 2 },
+  { field: 'teacher', missing: 20 }
 ];
 
 export default function NullValueBar() {

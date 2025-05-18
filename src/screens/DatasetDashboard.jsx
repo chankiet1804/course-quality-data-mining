@@ -15,7 +15,7 @@ import CommentCorrelationCharts from '../components/CommentCorrelationCharts';
 import { fakeCourses } from '../data/fakeCourses'
 import { commentByLabel } from '../data/commentByLabel'; // Dữ liệu cho biểu đồ tương quan
 
-const tabs = ['Tổng quan', 'Phân tích đầu vào', 'Tương quan'];
+const tabs = ['Tổng quan', 'Tương quan', 'Kết quả dự đoán' ];
 
 export default function DatasetDashboard() {
   const [activeTab, setActiveTab] = useState('Tổng quan');
@@ -27,9 +27,12 @@ export default function DatasetDashboard() {
           <>
             <StatCards />
             <FeatureTable />
+            <NullValueBar />
+            <ScoreDistributionPlot courses={fakeCourses} />
+            <CourseBySchoolChart />
           </>
         );
-      case 'Phân tích đầu vào':
+      case 'Kết quả dự đoán':
         return (
           <>
             <NullValueBar />
@@ -54,7 +57,12 @@ export default function DatasetDashboard() {
 
   return (
     <div className="dashboard-container">
-      <h1>Dashboard Phân tích Dataset</h1>
+      <h1>
+        <div>Dashboard</div>
+        {activeTab === 'Tổng quan' && 'Phân tích tổng quan Dataset'}
+        {activeTab === 'Tương quan' && 'Phân tích tương quan giữa các features và các labels'}
+        {activeTab === 'Kết quả dự đoán' && 'Thể hiện kết quả dự đoán'}
+      </h1>
       <div className="tab-header">
         {tabs.map((tab) => (
           <button

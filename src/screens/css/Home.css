@@ -12,7 +12,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .home-header-title {
   display: flex;
@@ -20,13 +20,14 @@
   gap: 0.75rem;
 }
 .header-icon {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: #5B8FF9;
 }
-.home-header h1 {
-  font-size: 2.75rem;
-  color: #1f2937;
-  line-height: 1.2;
+
+.home-header-title h2 {
+  margin-bottom: 0.05em;   /* hoặc 0 nếu muốn sát hẳn */
+  /* margin-top: 0; */      /* nếu cần */
+  font-size: 2.0rem;
 }
 .home-header-subtitle {
   margin-top: 0.5rem;
@@ -36,19 +37,26 @@
 
 /* Cards */
 .card-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;                       /* giảm khoảng cách giữa các card */
   width: 100%;
-  max-width: 800px;
+  max-width: 1300px;               /* tăng chiều rộng vùng chứa card */
   margin: 0 auto;
+  padding: 1.5rem 0;
 }
 .card {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 230px;      /* giảm chiều cao tối thiểu */
+  max-height: 260px;      /* giảm chiều cao tối đa */
+  height: 230px;          /* card thấp hơn - có thể chỉnh lại cho từng layout */
 }
 .card:hover {
   transform: translateY(-8px);
@@ -57,28 +65,29 @@
 .card-header {
   display: flex;
   align-items: center;
-  padding: 1.25rem 1.5rem;
+  padding: 1rem 1.5rem 0.5rem 1.5rem;   /* giảm padding bottom */
   border-left: 6px solid;
   background: #fafafa;
-}
-.card-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  width: 2.75rem;
-  height: 2.75rem;
-  margin-right: 1rem;
+  border-radius: 24px 24px 0 0;
+  margin-bottom: 0.3rem;                /* giảm khoảng cách với content */
 }
 .card-header h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
   margin: 0;
-  font-size: 1.625rem;
-  font-weight: 600;
+}
+.card-icon {
+  margin-right: 1rem;
 }
 .card-content {
-  padding: 1.25rem 1.5rem 1.75rem;
+  flex: 1;
+  padding: 0.5rem 1.2rem 1rem;    /* giảm padding, nhất là phía trên */
   color: #374151;
-  line-height: 1.6;
+  line-height: 1.55;
+  font-size: 1.08rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 }
 .card-content p {
   margin: 0.75rem 0;
@@ -102,4 +111,152 @@
 .input-table th {
   background: #f3f4f6;
   font-weight: 600;
+}
+
+.cqi-block {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 60px 34px 60px;
+  box-shadow: 0 6px 32px #bab8f233, 0 2px 8px #fff6;
+  max-width: 920px;     /* <-- tăng chiều rộng tối đa */
+  margin: 36px auto 0 auto;   /* <-- căn giữa và đẩy xuống */
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* căn giữa nội dung bên trong */
+}
+
+.cqi-block .cqi-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  text-align: center;
+}
+
+.section-title-cqi {
+  text-align: center;
+  font-size: 2.0rem;
+  font-weight: 700;
+  margin-top: 28px;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+  line-height: 1.16;
+  position: relative;
+  /* Không cần padding-bottom nếu đã dùng margin-bottom */
+}
+.section-title-cqi span {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #888;
+  margin-left: 8px;
+}
+
+.section-title-underline {
+  margin: 0.32em auto 0 auto;
+  width: 206px;             /* Độ dài thanh */
+  height: 4px;             /* Độ dày thanh */
+  background: linear-gradient(90deg, #4FC3F7, #5B8FF9 80%);
+  border-radius: 4px;
+  opacity: 0.96;
+  /* Có thể thử box-shadow nếu muốn nổi hơn */
+}
+
+.cqi-block .cqi-desc {
+  color: #333;
+  margin-bottom: 1.3rem;
+  font-size: 1.13rem;
+  text-align: center;
+  max-width: 780px;
+}
+
+.cqi-block .cqi-formula {
+  background: #f8f8fe;
+  border-radius: 13px;
+  font-size: 1.21rem;
+  text-align: center;
+  padding: 15px 14px 10px 14px;
+  margin-bottom: 1.6rem;
+  width: 100%;
+  max-width: 720px;
+}
+
+.cqi-feature-list {
+  margin-top: 1.1rem;
+  width: 100%;
+  max-width: 840px;
+}
+
+.cqi-feature-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.1rem;
+  font-size: 1.09rem;
+  width: 100%;
+}
+
+.cqi-feature-icon {
+  font-size: 1.38rem;
+  margin-right: 0.75rem;
+  width: 2em;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.cqi-feature-abbr {
+  font-weight: 700;
+  margin-right: 0.6rem;
+  min-width: 2.5em;
+  display: inline-block;
+}
+
+.cqi-feature-title {
+  color: #1b1b1b;
+  min-width: 160px;
+}
+
+.cqi-feature-desc {
+  color: #383838;
+  margin-left: 0.6rem;
+  flex: 1;
+}
+
+@media (max-width: 1150px) {
+  .cqi-block {
+    padding: 32px 16px 28px 16px;
+    max-width: 99vw;
+  }
+  .cqi-block .cqi-formula, .cqi-feature-list {
+    max-width: 99vw;
+  }
+}
+
+@media (max-width: 700px) {
+  .cqi-block {
+    padding: 16px 5px;
+    max-width: 100vw;
+    margin: 18px 0 0 0;
+  }
+}
+
+.detail-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 12px;
+  font-weight: 500;
+  color: #5665f8;
+  text-decoration: none;
+  font-size: 1.08rem;
+  transition: color 0.15s;
+}
+.detail-link:hover {
+  color: #4153c3;
+}
+.detail-link-text {
+  text-decoration: none;
+  transition: text-decoration 0.12s;
+}
+.detail-link:hover .detail-link-text {
+  text-decoration: underline;
+  text-underline-offset: 2.0px;
+  text-decoration-thickness: 0.5px;
 }

@@ -8,9 +8,10 @@ import {
   FiBarChart2,
   FiList
 } from 'react-icons/fi';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet,Link } from 'react-router-dom';
 import './css/Home.css';
-
+import CourseQualityResult from '../components/CourseQualityResult';
+import { FiArrowRight } from 'react-icons/fi';
 
 export default function Home() {
   const members = [
@@ -39,60 +40,46 @@ export default function Home() {
       color: '#5B8FF9',
       content: (
         <p>
-          Trong thời đại số hóa hiện nay, học trực tuyến đã trở thành xu hướng tất yếu trong giáo dục đại học và đào tạo từ xa. Tuy nhiên, cùng với sự bùng nổ về số lượng khóa học trên các nền tảng MOOCs (Massive Open Online Courses), câu hỏi đặt ra là: làm thế nào để đánh giá và đảm bảo chất lượng các khóa học một cách khách quan, hiệu quả và quy mô?
-Đề tài này tập trung vào việc ứng dụng các phương pháp học máy và phân tích dữ liệu để xây dựng mô hình dự đoán chất lượng khóa học trên nền tảng học trực tuyến. Thay vì chỉ dựa vào đánh giá thủ công hay số liệu thô, mô hình sẽ tổng hợp nhiều tiêu chí đa chiều như: bình luận của người học, điểm trung bình bài tập, uy tín giảng viên, xếp hạng cơ sở đào tạo, và tài nguyên học tập (video, bài tập...). Dữ liệu được trích xuất và xử lý từ hệ thống MOOCs, bao gồm hành vi học tập, lịch sử giảng dạy và tương tác của sinh viên.
-Với cách tiếp cận này, chúng tôi kỳ vọng cung cấp một khung đánh giá toàn diện và có khả năng mở rộng, góp phần nâng cao trải nghiệm học tập và hỗ trợ các nền tảng giáo dục trực tuyến cải tiến chất lượng giảng dạy một cách có hệ thống và dữ liệu hóa.
+         reygdfbdtht
         </p>
       )
     },
     {
-      title: 'Nhóm thực hiện',
-      icon: <FiUsers />,
+      title: 'Bộ dữ liệu',
+      icon: <FiDatabase />,
       color: '#61DDAA',
-      content: (
-        <ul>
-          {members.map((m, i) => (
-            <li key={i}>{m}</li>
-          ))}
-        </ul>
-      )
+        content: (
+        <>
+          <p>
+            Sử dụng dữ liệu từ MOOCubeX với nhiều đặc trưng về hành vi học tập, tương tác và kết quả của học viên.
+          </p>
+          <div style={{ display: "flex", justifyContent: "flex-end" }}>
+            <Link to="/dataset-overview" className="detail-link">
+              <span className="detail-link-text">Xem chi tiết</span>
+              <FiArrowRight />
+            </Link>
+          </div>
+        </>
+        )
     },
     {
-      title: 'Bối cảnh bài toán',
+      title: 'Tính mới của đề tài',
       icon: <FiGlobe />,
       color: '#F6BD16',
       content: (
         <p>
-          Sự phát triển nhanh chóng của các nền tảng học trực tuyến như MOOCs đã tạo điều kiện cho hàng triệu người trên toàn thế giới tiếp cận tri thức một cách linh hoạt và tiết kiệm. Tuy nhiên, sự đa dạng và quy mô lớn của các khóa học cũng đặt ra thách thức trong việc đảm bảo chất lượng nội dung và trải nghiệm học tập cho người dùng.
-Trên thực tế, người học thường gặp khó khăn trong việc lựa chọn các khóa học phù hợp do thiếu thông tin rõ ràng và khách quan về chất lượng. Đồng thời, các nền tảng giáo dục cũng cần một hệ thống đánh giá tự động để hỗ trợ kiểm soát, cải thiện và đề xuất các khóa học hiệu quả hơn.
-Do đó, bài toán đặt ra là: Làm thế nào để xây dựng một mô hình có khả năng dự đoán chất lượng của các khóa học trực tuyến, dựa trên dữ liệu hành vi người học, nội dung khóa học, giảng viên và cơ sở đào tạo?
-Việc giải quyết bài toán này không chỉ giúp người học có cơ sở lựa chọn tốt hơn, mà còn hỗ trợ các nhà quản lý và giảng viên trong việc giám sát và cải tiến chất lượng đào tạo một cách chủ động, tự động và có cơ sở dữ liệu hỗ trợ.
-
+          hthrhthn 
         </p>
       )
     },
     {
-      title: 'Đầu vào của bài toán',
+      title: 'Mô hình dự đoán',
       icon: <FiDatabase />,
       color: '#FF7F50',
-      content: (
-        <table className="input-table">
-          <thead>
-            <tr>
-              <th>Trường</th>
-              <th>Mô tả</th>
-            </tr>
-          </thead>
-          <tbody>
-            {fields.map((f) => (
-              <tr key={f.key}>
-                <td><code>{f.key}</code></td>
-                <td>{f.desc}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )
+      content: 
+        <p>
+          Mô hình dự đoán chất lượng khóa học được xây dựng dựa trên các yếu tố chính như: điểm trung bình bài tập, lịch sử giảng dạy của giảng viên, số lượng video và bài tập trong khóa học, cũng như các bình luận từ người học. Các yếu tố này được thu thập từ dữ liệu hành vi người dùng trên nền tảng MOOCs.
+        </p>
     }
   ];
 
@@ -102,12 +89,9 @@ Việc giải quyết bài toán này không chỉ giúp người học có cơ 
       <main className="container">
         <header className="home-header">
           <div className="home-header-title">
-            <FiArchive className="header-icon" />
-            <h1>Hệ thống Dự đoán Chất lượng Khóa học</h1>
+            <h2>Tổng quan đề tài</h2>
           </div>
-          <p className="home-header-subtitle">
-            Phân tích và đánh giá chất lượng khóa học thông qua dữ liệu học viên
-          </p>
+          <div className="section-title-underline"></div>
         </header>
 
         <div className="card-grid">
@@ -123,6 +107,59 @@ Việc giải quyết bài toán này không chỉ giúp người học có cơ 
             </section>
           ))}
         </div>
+
+        <div className="section-title-cqi">
+          Thang đo chất lượng khóa học
+          <span style={{fontWeight: 400, color:'#888', fontSize: '1.55rem'}}>
+            (Course Quality Index - <b>CQI</b>)
+          </span>
+          <div className="section-title-underline"></div>
+        </div>
+        <div className="cqi-block">
+          <div className="cqi-desc">
+            CQI là chỉ số tổng hợp dự đoán chất lượng của mỗi khóa học dựa trên 5 tiêu chí chính, cho phép đánh giá khách quan từ nhiều góc độ.
+          </div>
+          <div className="cqi-formula">
+            <b>CQI = w₁ × RSI + w₂ × TSI + w₃ × AEI + w₄ × CSI + w₅ × RDI</b>
+            <div style={{ color:'#7c7c88', fontSize: '1rem', marginTop: '4px' }}>
+              Trong đó: w₁, w₂, w₃, w₄, w₅ là trọng số các tiêu chí (thiết lập linh hoạt theo bài toán).
+            </div>
+          </div>
+          <div className="cqi-feature-list">
+            <div className="cqi-feature-row">
+              
+              <span className="cqi-feature-abbr">RSI</span>
+              <span className="cqi-feature-title">Ranking Score Index</span>
+              <span className="cqi-feature-desc">: Đo độ uy tín, xếp hạng của trường tổ chức khóa học.</span>
+            </div>
+            <div className="cqi-feature-row">
+              
+              <span className="cqi-feature-abbr">TSI</span>
+              <span className="cqi-feature-title">Teacher Score Index</span>
+              <span className="cqi-feature-desc">: Đo điểm uy tín/đánh giá của giảng viên phụ trách.</span>
+            </div>
+            <div className="cqi-feature-row">
+              
+              <span className="cqi-feature-abbr">AEI</span>
+              <span className="cqi-feature-title">Assignment Engagement Index</span>
+              <span className="cqi-feature-desc">: Điểm trung bình các bài tập, đo sự tương tác thực tế của học viên.</span>
+            </div>
+            <div className="cqi-feature-row">
+              
+              <span className="cqi-feature-abbr">CSI</span>
+              <span className="cqi-feature-title">Comment Sentiment Index</span>
+              <span className="cqi-feature-desc">: Phân tích tỷ lệ bình luận tích cực/tổng số bình luận của học viên.</span>
+            </div>
+            <div className="cqi-feature-row">
+              
+              <span className="cqi-feature-abbr">RDI</span>
+              <span className="cqi-feature-title">Resource Diversity Index</span>
+              <span className="cqi-feature-desc">: Độ đa dạng tài nguyên (bài tập, video, tài liệu...) trong khóa học.</span>
+            </div>
+          </div>
+        </div>
+
+        <CourseQualityResult />
 
         <Outlet />
       </main>

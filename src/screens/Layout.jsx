@@ -9,22 +9,28 @@ import {
   FiBarChart2,
   FiList
 } from 'react-icons/fi';
+import { IoHomeOutline,IoAnalytics } from "react-icons/io5";
+import { CgInsights } from "react-icons/cg";
 import { NavLink, Outlet } from 'react-router-dom';
 import './css/global.css'; 
+import Footer from '../components/Footer'; 
 
 export default function Layout() {
   return (
     <div className="layout-wrapper">
       <header className="navbar">
         
-        <div className="logo">DATA MINING</div>
+        <div className="logo">
+          <CgInsights style={{ marginRight: 7, fontSize: "1.15em", verticalAlign: "middle" }} />
+          EP-MOOCX
+        </div>
         
         
         <ul className="nav-links">
-          <li><NavLink to="/" end>Trang chủ</NavLink></li>
+          <li><NavLink to="/" end><IoHomeOutline /> Trang chủ</NavLink></li>
           <li>
             <NavLink to="/dataset" className={({isActive})=>isActive?'active':''}>
-              <FiBook /> Phân tích Dataset
+              <IoAnalytics /> Dashboard
             </NavLink>
           </li>
           {/* <li>
@@ -34,7 +40,7 @@ export default function Layout() {
           </li> */}
           <li>
             <NavLink to="/results" className={({isActive})=>isActive?'active':''}>
-              <FiBarChart2 /> Kết quả Thực nghiệm
+              <FiBarChart2 /> Mô hình
             </NavLink>
           </li>
           <li>
@@ -50,6 +56,7 @@ export default function Layout() {
         {/* React Router sẽ render trang con ở đây */}
         <Outlet />
       </main>
+      <Footer />
      </div>
   );
 }

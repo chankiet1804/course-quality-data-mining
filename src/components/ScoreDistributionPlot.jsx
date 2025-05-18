@@ -86,7 +86,8 @@ export default function ScoreDistributionPlot({ courses }) {
               value: 'Số lượng bài tập',
               angle: -90,
               position: 'insideLeft',
-              offset: 10,
+              offset: 8,
+              dy: 52,
             }}
           />
           <Tooltip content={<CustomTooltip />} />

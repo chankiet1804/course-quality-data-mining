@@ -3,9 +3,9 @@ import './DashboardSection.css';
 
 const stats = [
   { label: 'Số lượng khóa học', value: 3633 },
-  { label: 'Số lượng trường dữ liệu (features)', value: 10 },
-  { label: 'Tổng số trường có thiếu dữ liệu', value: 5 },
-  { label: 'Bình luận trung bình / khóa học', value: 25.4 }
+  { label: 'Số lượng lĩnh vực', value: 148 },
+  { label: 'Số lượng trường học', value: 375 },
+  { label: 'Số lượng sinh viên', value: '1.756.320' }
 ];
 
 export default function StatCards() {

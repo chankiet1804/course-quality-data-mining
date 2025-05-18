@@ -1,15 +1,22 @@
-// src/components/CourseBySchoolChart.jsx
 import React from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
 
-const data = [
-  { school: 'ĐH A', courseCount: 1200, ranking: 4.6 },
-  { school: 'ĐH B', courseCount: 950, ranking: 4.2 },
-  { school: 'ĐH C', courseCount: 700, ranking: 3.9 },
-  { school: 'Khác', courseCount: 783, ranking: 4.0 }
+// Tạo danh sách tên trường mẫu
+const universityNames = [
+  'Tsinghua University', 'Peking University', 'Fudan University', 'Zhejiang University',
+  'Shanghai Jiao Tong University', 'University of Science and Technology of China',
+  'Wuhan University', 'Nanjing University', 'Sun Yat-sen University', 'Harbin Institute of Technology',
+  'Xi\'an Jiaotong University', 'Jilin University', 'Sichuan University', 'Beihang University', 'Tongji University',
+  'Xiamen University', 'Renmin University of China', 'Beijing Normal University', 'East China Normal University', 'Central South University'
 ];
+// Fake 200 trường
+const data = Array.from({ length: 200 }, (_, i) => ({
+  school: universityNames[i % universityNames.length] + ` #${i+1}`,
+  courseCount: Math.floor(Math.random() * 360) + 40,
+  ranking: Math.floor(Math.random() * 40) + 60
+}));
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload?.length) {
@@ -17,7 +24,7 @@ const CustomTooltip = ({ active, payload }) => {
       <div style={{ background: '#fff', border: '1px solid #ccc', padding: 10 }}>
         <p><strong>{payload[0].payload.school}</strong></p>
         <p>Số khóa học: {payload[0].value}</p>
-        <p>Ranking trung bình: {payload[0].payload.ranking}</p>
+        <p>Ranking score: {payload[0].payload.ranking}</p>
       </div>
     );
   }
@@ -27,11 +34,22 @@ const CustomTooltip = ({ active, payload }) => {
 export default function CourseBySchoolChart() {
   return (
     <div className="chart-box">
-      <h3>Phân bố số khóa học theo trường</h3>
-      <ResponsiveContainer width="100%" height={300}>
+      <h3 style={{ marginBottom: 14 }}>Phân bố số lượng khóa học theo các trường</h3>
+      <ResponsiveContainer width="100%" height={340}>
         <BarChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="school" />
+          <XAxis
+            dataKey="school"
+            tick={false}
+            axisLine={true}
+            label={{
+              value: "Các trường học",
+              position: "insideBottom",
+              offset: -1,
+              fontSize: 15,
+              fontWeight: 400
+            }}
+          />
           <YAxis />
           <Tooltip content={<CustomTooltip />} />
           <Bar dataKey="courseCount" fill="#61DDAA" />

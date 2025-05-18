@@ -1,5 +1,5 @@
 /* Layout chung */
-html, body {
+html, body,.layout-wrapper {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -18,7 +18,7 @@ html, body {
 .layout-wrapper {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 
@@ -51,9 +51,13 @@ html, body {
 /* Logo chiếm khoảng nhỏ bên trái */
 .logo {
   color: #2375d3;
-  font-size: 1.5rem;
+  font-size: 1.65rem;   /* lớn hơn một chút cho cân với icon */
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
   flex: 1;
+  letter-spacing: 1px;
 }
 
 /* Nav-links chiếm khoảng rộng hơn bên phải */
@@ -83,4 +87,14 @@ html, body {
 
 .nav-links .active {
   color: #5B8FF9;
+}
+
+.nav-links svg {
+  /* hoặc nếu vẫn chưa ổn thì dùng: */
+  vertical-align: -1.5px;
+  /* hoặc dùng position */
+  position: relative;
+  top: 2px;   /* điều chỉnh số px cho vừa ý */
+  margin-right: 1.5px; /* cách chữ cho đẹp */
+  font-size: 1.15em; /* tăng/giảm tùy ý */
 }
