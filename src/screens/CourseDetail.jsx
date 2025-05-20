@@ -28,7 +28,8 @@ function getFakeCourseDetail(courseId) {
     teachers: [
       { name: 'Thầy A', avg_score: 8.5 },
       { name: 'Cô B', avg_score: 9.0 }
-    ]
+    ],
+    teachers: course.teachers
   };
 }
 
