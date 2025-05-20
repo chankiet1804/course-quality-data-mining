@@ -25,10 +25,6 @@ function getFakeCourseDetail(courseId) {
       { name: 'Nguyễn Văn A', history: [7.5, 8.0, 9.0] },
       { name: 'Trần Thị B', history: [6.0, 7.0, 7.5] }
     ],
-    teachers: [
-      { name: 'Thầy A', avg_score: 8.5 },
-      { name: 'Cô B', avg_score: 9.0 }
-    ],
     teachers: course.teachers
   };
 }
