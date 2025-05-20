@@ -7,9 +7,9 @@ import {
 const data = [
   { star: 1, comment: 150, ex: 95, vid: 130, student: 90 },
   { star: 2, comment: 189, ex: 170, vid: 97, student: 160 },
-  { star: 3, comment: 250, ex: 206, vid: 155, student: 85 },
+  { star: 3, comment: 148, ex: 226, vid: 155, student: 135 },
   { star: 4, comment: 278, ex: 199, vid: 206, student: 320 },
-  { star: 5, comment: 301, ex: 275, vid: 237, student: 210 }
+  { star: 5, comment: 301, ex: 275, vid: 237, student: 280 }
 ];
 
 export default function LabelCorrelationLineChart() {

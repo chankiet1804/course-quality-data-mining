@@ -19,15 +19,15 @@ export default function CommentPieChart({ data, title }) {
     <div className="PieChartBox">
       
       <h3>{title}</h3>
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={200}>
         <PieChart>
           <Pie
             data={data}
             cx="50%"
             cy="50%"
             labelLine={false}
-            label={({ name, percent }) => `${name} (${(percent * 100).toFixed(0)}%)`}
-            outerRadius={100}
+            label={false}
+            outerRadius={60}    // Giảm từ 100 xuống 60 (hoặc nhỏ hơn nếu muốn)
             fill="#8884d8"
             dataKey="value"
           >
@@ -36,7 +36,7 @@ export default function CommentPieChart({ data, title }) {
             ))}
           </Pie>
           <Tooltip />
-          
+            
         </PieChart>
       </ResponsiveContainer>
     </div>

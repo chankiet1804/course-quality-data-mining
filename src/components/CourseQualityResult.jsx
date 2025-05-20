@@ -48,29 +48,47 @@ export default function CourseQualityResult() {
 
   return (
     <div className="quality-result-window">
-      <div className="result-header">
-        <span className="header-title">Kết quả dự đoán chất lượng khóa học</span>
-      </div>
+      {/* <div className="result-header">
+        <span className="header-title">
+          Kết quả dự đoán chất lượng khóa học
+        </span>
+      </div> */}
       <div className="result-content">
-        <h2>Mức chất lượng</h2>
-        {RESULT_DATA.sort((a, b) => b.star - a.star).map((row, idx) => {
-          const level = STAR_LEVELS[row.star - 1];
-          return (
-            <div key={row.star} className="result-row" onClick={() => handleClickLevel(row.star)}>
-              <span className="level-label" style={{ color: level.color }}>{level.label} ({level.desc})</span>
-              <div className="result-bar-bg">
-                <div
-                  className="result-bar"
-                  style={{ width: `${row.percent}%`, background: level.color }}
-                ></div>
+        <h2>Chất lượng các khóa học</h2>
+        <div className="star-levels-list">
+          {RESULT_DATA.sort((a, b) => b.star - a.star).map((row, idx) => {
+            const level = STAR_LEVELS[row.star - 1];
+            return (
+              <div
+                key={row.star}
+                className="result-row"
+                onClick={() => handleClickLevel(row.star)}
+                style={{padding: "11px 0"}}
+              >
+                <div className="level-label-wrap">
+                  <span className="star-icon" style={{color: level.color, fontSize: 19, marginRight: 4}}>★</span>
+                  <span className="level-label" style={{ color: level.color }}>
+                    <b>{level.label}</b>
+                    <span className="level-desc"> ({level.desc})</span>
+                  </span>
+                </div>
+                <div className="result-bar-bg">
+                  <div
+                    className="result-bar"
+                    style={{
+                      width: `${row.percent}%`,
+                      background: `linear-gradient(90deg, ${level.color} 75%, #f2f2f7 100%)`,
+                      boxShadow: `0 2px 8px ${level.color}22`
+                    }}
+                  ></div>
+                </div>
+                <span className="percent">{row.percent}%</span>
               </div>
-              <span className="percent">{row.percent}%</span>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
 
-      {/* Modal chi tiết */}
       {showModal && (
         <CourseQualityDetailModal
           star={selectedLevel}
@@ -79,8 +97,8 @@ export default function CourseQualityResult() {
         />
       )}
     </div>
-  );
-}
+      );
+  }
 
 // --- Modal chi tiết
 function CourseQualityDetailModal({ star, data, onClose }) {

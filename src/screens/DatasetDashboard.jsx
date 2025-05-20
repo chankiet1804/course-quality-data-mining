@@ -3,16 +3,15 @@ import './css/DatasetDashboard.css';
 
 import StatCards from '../components/StatCards'; // phần tổng quan
 import FeatureTable from '../components/FeatureTable';
-import NullValueBar from '../components/NullValueBar';
+import ProblemScoreDistribution from '../components/ProblemScoreDistribution';
 import CommentPieChart from '../components/CommentPieChart';
-import ScoreDistributionPlot from '../components/ScoreDistributionPlot';
 import CourseBySchoolChart from '../components/CourseBySchoolChart';
 import ExerciseVideoBar from '../components/ExerciseVideoBar';
 import StudentLineChart from '../components/StudentLineChart';
 import LabelCorrelationLineChart from '../components/LabelCorrelationLineChart';
 import CommentCorrelationCharts from '../components/CommentCorrelationCharts';
+import CourseQualityResult from '../components/CourseQualityResult';
 
-import { fakeCourses } from '../data/fakeCourses'
 import { commentByLabel } from '../data/commentByLabel'; // Dữ liệu cho biểu đồ tương quan
 
 const tabs = ['Tổng quan', 'Tương quan', 'Kết quả dự đoán' ];
@@ -27,20 +26,15 @@ export default function DatasetDashboard() {
           <>
             <StatCards />
             <FeatureTable />
-            <NullValueBar />
-            <ScoreDistributionPlot courses={fakeCourses} />
+            <ProblemScoreDistribution />
             <CourseBySchoolChart />
+            <StudentLineChart />
           </>
         );
       case 'Kết quả dự đoán':
         return (
           <>
-            <NullValueBar />
-            {/* <CommentPieChart /> */}
-            <ScoreDistributionPlot courses={fakeCourses} />
-            <CourseBySchoolChart />
-            <ExerciseVideoBar />
-            <StudentLineChart />
+            <CourseQualityResult />
           </>
         );
       case 'Tương quan':
