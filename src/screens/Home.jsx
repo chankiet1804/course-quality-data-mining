@@ -12,6 +12,7 @@ import { NavLink, Outlet,Link } from 'react-router-dom';
 import './css/Home.css';
 import CourseQualityResult from '../components/CourseQualityResult';
 import { FiArrowRight } from 'react-icons/fi';
+import PipelineFlow from '../components/PipelineFlow';
 
 export default function Home() {
   const members = [
@@ -34,54 +35,63 @@ export default function Home() {
   ];
 
   const cards = [
-    {
-      title: 'Giới thiệu đề tài',
-      icon: <FiBook />,
-      color: '#5B8FF9',
-      content: (
-        <p>
-         reygdfbdtht
-        </p>
-      )
-    },
-    {
-      title: 'Bộ dữ liệu',
-      icon: <FiDatabase />,
-      color: '#61DDAA',
-        content: (
-        <>
-          <p>
-            Sử dụng dữ liệu từ MOOCubeX với nhiều đặc trưng về hành vi học tập, tương tác và kết quả của học viên.
-          </p>
-          <div style={{ display: "flex", justifyContent: "flex-end" }}>
-            <Link to="/dataset-overview" className="detail-link">
-              <span className="detail-link-text">Xem chi tiết</span>
-              <FiArrowRight />
-            </Link>
-          </div>
-        </>
-        )
-    },
-    {
-      title: 'Tính mới của đề tài',
-      icon: <FiGlobe />,
-      color: '#F6BD16',
-      content: (
-        <p>
-          hthrhthn 
-        </p>
-      )
-    },
-    {
-      title: 'Mô hình dự đoán',
-      icon: <FiDatabase />,
-      color: '#FF7F50',
-      content: 
-        <p>
-          Mô hình dự đoán chất lượng khóa học được xây dựng dựa trên các yếu tố chính như: điểm trung bình bài tập, lịch sử giảng dạy của giảng viên, số lượng video và bài tập trong khóa học, cũng như các bình luận từ người học. Các yếu tố này được thu thập từ dữ liệu hành vi người dùng trên nền tảng MOOCs.
-        </p>
-    }
-  ];
+  {
+    title: 'Giới thiệu đề tài',
+    icon: <FiBook />,
+    color: '#5B8FF9',
+    content: (
+      <>
+        <p>Nghiên cứu, đánh giá và khai thác tập dữ liệu học tập từ nền tảng MOOC nhằm xây dựng mô hình dự đoán chất lượng khóa học. Từ đó hỗ trợ nhà quản lý giáo dục điều chỉnh nội dung, tài nguyên giảng dạy và phương pháp tổ chức khóa học một cách kịp thời, phù hợp với nhu cầu và trải nghiệm thực tế của người học.</p>
+        
+      </>
+    )
+  },
+  {
+    title: 'Bộ dữ liệu',
+    icon: <FiDatabase />,
+    color: '#61DDAA',
+    content: (
+      <>
+        <p>Sử dụng dữ liệu từ MOOCubeX với nhiều đặc trưng về hành vi học tập, tương tác và kết quả của học viên.
+Bộ dữ liệu bao gồm hơn 3600 khóa học đến từ nhiều trường đại học, mô tả chi tiết về nội dung khóa học, giảng viên, học viên, bài tập, video, phản hồi và lịch sử học tập – phản ánh toàn diện quá trình dạy và học trên nền tảng trực tuyến.</p>
+        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <Link to="/dataset-overview" className="detail-link">
+            <span className="detail-link-text">Xem chi tiết</span>
+            <FiArrowRight />
+          </Link>
+        </div>
+      </>
+    )
+  },
+  {
+    title: 'Tính mới của đề tài',
+    icon: <FiGlobe />,
+    color: '#F6BD16',
+    content: (
+      <>
+        <p>Đề tài không chỉ dừng ở phân tích thống kê, mà còn đi sâu vào đánh giá chất lượng dữ liệu theo nhiều chiều (completeness, accuracy, consistency...) và xây dựng mô hình học máy để dự đoán chất lượng khóa học từ các đặc trưng định lượng và hành vi học viên – hướng tiếp cận chưa được khai thác phổ biến trong các nghiên cứu trước.</p>
+        
+      </>
+    )
+  },
+  {
+    title: 'Mô hình dự đoán',
+    icon: <FiDatabase />,
+    color: '#FF7F50',
+    content: (
+      <>
+        <p>Sử dụng các mô hình phân loại từ cơ bản đến nâng cao để giải bài toán dự đoán chất lượng khóa học. Việc lựa chọn đa dạng mô hình giúp đánh giá độ phân biệt và tiềm năng khai thác của tập dữ liệu.</p>
+        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <Link to="/results" className="detail-link">
+            <span className="detail-link-text">Xem chi tiết</span>
+            <FiArrowRight />
+          </Link>
+        </div>
+      </>
+    )
+  }
+];
+
 
   return (
     <>
@@ -99,7 +109,7 @@ export default function Home() {
             <section key={i} className="card">
               <div className="card-header" style={{ borderLeftColor: c.color }}>
                 <span className="card-icon" style={{ backgroundColor: c.color + '22' }}>
-                  {React.cloneElement(c.icon, { color: c.color, size: '1.5em' })}
+                  {React.cloneElement(c.icon, { color: c.color, size: '1.8em' })}
                 </span>
                 <h2 style={{ color: c.color }}>{c.title}</h2>
               </div>
@@ -107,6 +117,7 @@ export default function Home() {
             </section>
           ))}
         </div>
+
 
         <div className="section-title-cqi">
           Thang đo chất lượng khóa học
@@ -159,7 +170,7 @@ export default function Home() {
           </div>
         </div>
 
-        <CourseQualityResult />
+        <PipelineFlow />
 
         <Outlet />
       </main>
