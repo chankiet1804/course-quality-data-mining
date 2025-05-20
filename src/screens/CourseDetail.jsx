@@ -85,6 +85,11 @@ export default function CourseDetail() {
               <span className="course-detail-row-label">Field:</span>
               <span>{course.field ? course.field : <span style={{color:'#aaa'}}>Chưa cập nhật</span>}</span>
             </div>
+            <div className="course-detail-row">
+              <span className="course-detail-row-icon">📺</span>
+              <span className="course-detail-row-label">Số video:</span>
+              <span>{course.sl_vid || course.videos || 0}</span>
+            </div>
           </div>
 
           {/* Tỉ lệ comment (biểu đồ tròn) */}
@@ -193,7 +198,13 @@ export default function CourseDetail() {
             <h3>{course.name || course.course_id}</h3>
             <p><b>Mã:</b> {course.course_id}</p>
             <p><b>Số bài tập:</b> {course.problem_scores.length}</p>
-            {/* Thêm các trường khác nếu có */}
+            <p><b>Số video:</b> {course.sl_vid || course.videos || 0}</p>
+            <p>
+              <b>Giáo viên:</b> 
+              {(course.teachers && course.teachers.map(t => t.name).join(', ')) ||
+               (course.teacher_history && course.teacher_history.map(t => t.name).join(', ')) ||
+               'Chưa cập nhật'}
+            </p>
           </div>
         ))}
       </div>

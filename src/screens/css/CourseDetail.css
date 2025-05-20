@@ -236,3 +236,17 @@
   word-break: break-word;
   max-width: 100%;
 }
+
+.course-list-card-title {
+  font-size: 1.13rem;
+  font-weight: bold;
+  margin-bottom: 0.2em;
+  color: #222;
+}
+
+.course-info-row {
+  font-size: 0.92rem;
+  margin: 2px 0;
+  color: #444;
+  font-weight: 400;
+}
