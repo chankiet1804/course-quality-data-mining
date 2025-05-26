@@ -16,9 +16,36 @@ function randomTeachers() {
   return shuffled.slice(0, n).map(name => ({ name, avg_score: (Math.random() * 2 + 7).toFixed(2) }));
 }
 
+const COURSE_NAMES = [
+  'Nhập môn Khoa học Dữ liệu',
+  'Lập trình Python cơ bản',
+  'Phân tích Dữ liệu với R',
+  'Trí tuệ Nhân tạo',
+  'Học máy nâng cao',
+  'Khai phá Dữ liệu',
+  'Thống kê ứng dụng',
+  'Xử lý ngôn ngữ tự nhiên',
+  'Thị giác máy tính',
+  'Quản lý Dự án CNTT'
+];
+const SCHOOL_NAMES = [
+  'Đại học Bách Khoa',
+  'Đại học Quốc gia',
+  'Đại học Sư phạm',
+  'Đại học Kinh tế',
+  'Đại học Công nghệ',
+  'Đại học FPT',
+  'Đại học Ngoại thương',
+  'Đại học Khoa học Tự nhiên',
+  'Đại học Duy Tân',
+  'Đại học Đà Nẵng'
+];
+
 // Tạo mảng fakeCourses
 export const fakeCourses = Array.from({ length: 50 }, (_, i) => ({
   course_id: `C_${1000 + i}`,
+  name: COURSE_NAMES[i % COURSE_NAMES.length],
+  school: SCHOOL_NAMES[i % SCHOOL_NAMES.length],
   problem_scores: Array.from(
     { length: Math.floor(Math.random() * 41) + 10 }, // 10–100 phần tử
     () => randScore()
