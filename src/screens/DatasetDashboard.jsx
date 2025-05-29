@@ -11,10 +11,11 @@ import StudentLineChart from '../components/StudentLineChart';
 import LabelCorrelationLineChart from '../components/LabelCorrelationLineChart';
 import CommentCorrelationCharts from '../components/CommentCorrelationCharts';
 import CourseQualityResult from '../components/CourseQualityResult';
+import DataQuality from '../components/DataQuality';
 
 import { commentByLabel } from '../data/commentByLabel'; // Dữ liệu cho biểu đồ tương quan
 
-const tabs = ['Tổng quan', 'Tương quan', 'Kết quả dự đoán' ];
+const tabs = ['Tổng quan', 'Tương quan', 'Kết quả dự đoán', "Chất lượng dữ liệu" ];
 
 export default function DatasetDashboard() {
   const [activeTab, setActiveTab] = useState('Tổng quan');
@@ -44,6 +45,12 @@ export default function DatasetDashboard() {
           <CommentCorrelationCharts commentByLabel={commentByLabel} />
         </>
         );
+      case 'Chất lượng dữ liệu':
+        return(
+        <>    
+          <DataQuality />
+        </>
+        );
       default:
         return null;
     }
@@ -56,6 +63,7 @@ export default function DatasetDashboard() {
         {activeTab === 'Tổng quan' && 'Phân tích tổng quan Dataset'}
         {activeTab === 'Tương quan' && 'Phân tích tương quan giữa các features và các labels'}
         {activeTab === 'Kết quả dự đoán' && 'Thể hiện kết quả dự đoán'}
+        {activeTab === 'Chất lượng dữ liệu'}
       </h1>
       <div className="tab-header">
         {tabs.map((tab) => (

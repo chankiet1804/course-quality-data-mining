@@ -1,0 +1,411 @@
+/* DataQuality.css */
+
+/* General Styles */
+body {
+  font-family: 'Inter', sans-serif; /* A modern, clean font */
+  background-color: #f0f2f5; /* Light grey background for the whole page */
+  color: #333;
+  line-height: 1.6;
+}
+
+.dataquality-container {
+  max-width: 1024px;
+  margin: 2rem auto; /* More margin top/bottom */
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Softer, larger shadow */
+}
+
+/* Header */
+.dataquality-header {
+  font-size: 2rem; /* Larger font */
+  font-weight: 700; /* Bolder */
+  color: #2c3e50; /* Darker, more elegant blue-gray */
+  margin-bottom: 2rem;
+  text-align: center; /* Center the header */
+  letter-spacing: -0.02em; /* Slightly tighter letter spacing */
+  background: linear-gradient(to right, #4a90e2, #7b68ee); /* Gradient for the header */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Description */
+.dataquality-description {
+  background-color: #e8f0fe; /* Lighter blue */
+  padding: 1.5rem; /* More padding */
+  border-radius: 10px; /* Slightly more rounded */
+  margin-bottom: 2.5rem;
+  border-left: 6px solid #4a90e2; /* Thicker, vibrant blue border */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.dataquality-description:hover {
+  transform: translateY(-3px); /* Lift on hover */
+}
+
+.dataquality-description p {
+  color: #374151;
+  line-height: 1.75; /* Improved readability */
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Data Quality Section */
+.dataquality-quality-section {
+  background-color: #fdfefe; /* Off-white, subtle background */
+  border: 1px solid #e0e6ed;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06); /* Softer shadow */
+  overflow: hidden; /* Ensures rounded corners clip content */
+}
+
+.dataquality-section-header {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); /* Warm, inviting gradient */
+  padding: 1rem 1.5rem; /* More padding */
+  border-bottom: 1px solid #f0e0d5;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* More space around icon */
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #6a0572; /* Deep purple for contrast with orange gradient */
+}
+
+.dataquality-section-icon {
+  width: 1.75rem; /* Larger icon */
+  height: 1.75rem;
+  color: #d62828; /* Stronger accent color */
+  filter: drop-shadow(0 0 5px rgba(214, 40, 40, 0.5)); /* Subtle glow */
+}
+
+.dataquality-section-title {
+  font-size: 1.3rem; /* Slightly larger */
+  font-weight: 700;
+  color: #7b3f00; /* Darker brown/orange for text */
+}
+
+/* Dimension Buttons */
+.dataquality-dimension-button {
+  width: 100%;
+  padding: 1.2rem 1.5rem; /* Increased padding */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border: none;
+  border-bottom: 1px solid #e0e6ed; /* Subtle separator */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #34495e; /* Darker text */
+}
+
+.dataquality-dimension-button:hover {
+  background-color: #f0f7ff; /* Light blue on hover */
+  color: #2980b9; /* Blue text on hover */
+  transform: translateX(5px); /* Slight slide effect */
+  box-shadow: inset 5px 0px 0px #2980b9; /* Highlight border */
+}
+
+.dataquality-dimension-title {
+  font-weight: 600;
+  color: inherit; /* Inherit color from button for hover effect */
+}
+
+.dataquality-chevron {
+  width: 1.35rem; /* Slightly larger */
+  height: 1.35rem;
+  color: #95a5a6; /* Softer grey */
+  transition: transform 0.3s ease;
+}
+
+.dataquality-dimension-button:hover .dataquality-chevron {
+  color: #2980b9; /* Blue on hover */
+  transform: rotate(90deg); /* Rotate for right arrow */
+}
+
+/* Expanded Content */
+.dataquality-dimension-content {
+  padding: 1.5rem; /* More padding */
+  background-color: #f8fafd; /* Very light blue background */
+  border-top: 1px dashed #dbe9f9; /* Dashed separator */
+  animation: fadeIn 0.5s ease-out; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Detailed Sections (Hard Dimensions) */
+.dataquality-detailed-section {
+  background-color: #ffffff;
+  padding: 2rem; /* More padding */
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Softer shadow */
+  transition: all 0.3s ease;
+}
+
+.dataquality-detailed-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dataquality-detailed-section h3 {
+  color: #2c3e50; /* Darker blue-gray */
+  font-size: 1.5rem; /* Larger font */
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  margin-top: 0;
+  border-bottom: 3px solid #6c5ce7; /* Vibrant purple border */
+  padding-bottom: 0.75rem;
+  position: relative;
+}
+
+.dataquality-detailed-section h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* Position below the border */
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #6c5ce7, #a29bfe); /* Gradient for the underline */
+  z-index: 1;
+}
+
+.dataquality-subsection {
+  margin-bottom: 1.8rem; /* More space between subsections */
+}
+
+.dataquality-subsection h4 {
+  color: #34495e; /* Darker text */
+  font-size: 1.1rem; /* Slightly larger */
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  margin-top: 0;
+}
+
+.dataquality-subsection p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.dataquality-formula-section {
+  background-color: #f0f4f8; /* Light blue-gray */
+  padding: 1.2rem;
+  border-radius: 8px; /* More rounded */
+  border-left: 5px solid #3498db; /* Stronger blue border */
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.03); /* Subtle inner shadow */
+}
+
+.dataquality-formula-section strong {
+  color: #2c3e50;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.6rem;
+  margin-top: 1.2rem;
+}
+
+.dataquality-formula-section strong:first-child {
+  margin-top: 0;
+}
+
+.dataquality-formula {
+  background-color: #2d3436; /* Darker, sleek background */
+  color: #ecf0f1; /* Light grey text */
+  padding: 1rem;
+  border-radius: 6px;
+  font-family: 'Fira Code', 'Courier New', monospace; /* Monospace font for code */
+  margin: 0.75rem 0;
+  overflow-x: auto;
+  font-size: 0.9em;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dataquality-formula em {
+  font-style: normal;
+  color: #ffeaa7; /* Yellowish for emphasized text */
+}
+
+.dataquality-subsection ul {
+  margin: 0.75rem 0;
+  padding-left: 1.8rem; /* More indent */
+  list-style: disc outside; /* Ensure disc style */
+}
+
+.dataquality-subsection li {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+}
+
+.dataquality-subsection li strong {
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+/* Soft Dimensions */
+.dataquality-research-note {
+  background-color: #ffeaa7; /* Soft yellow for a note */
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border-left: 5px solid #fdcb6e; /* Stronger yellow border */
+  color: #333;
+}
+
+.dataquality-dimension-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem; /* Increased gap */
+}
+
+@media (min-width: 768px) {
+  .dataquality-dimension-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .dataquality-dimension-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on larger screens */
+  }
+}
+
+.dataquality-dimension-card {
+  background-color: #ffffff;
+  padding: 1.5rem; /* More padding */
+  border-radius: 10px;
+  border: 1px solid #e0e6ed;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all 0.3s ease; /* Smooth transitions for hover */
+}
+
+.dataquality-dimension-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); /* More prominent shadow on hover */
+  border-color: #a29bfe; /* Highlight border on hover */
+}
+
+.dataquality-card-icon {
+  width: 2.2rem; /* Larger icons */
+  height: 2.2rem;
+  margin-bottom: 0.8rem;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2)); /* Subtle icon shadow */
+}
+
+/* Specific icon colors (more vibrant and distinct) */
+.dataquality-icon-green { color: #2ecc71; } /* Emerald Green */
+.dataquality-icon-blue { color: #3498db; }  /* Peter River Blue */
+.dataquality-icon-purple { color: #9b59b6; } /* Amethyst Purple */
+.dataquality-icon-orange { color: #f39c12; } /* Orange */
+.dataquality-icon-lime { color: #a2cb5f; }   /* Lime Green */
+.dataquality-icon-red { color: #e74c3c; }    /* Alizarin Red */
+
+
+.dataquality-dimension-card h4 {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.6rem;
+  font-size: 1.15rem;
+}
+
+.dataquality-dimension-card p {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Quality Metrics Summary */
+.dataquality-summary {
+  margin-top: 3rem; /* More space from previous section */
+  background: linear-gradient(135deg, #e0efff 0%, #d0e0ff 100%); /* Soft blue gradient */
+  padding: 2rem; /* More padding */
+  border-radius: 12px;
+  border: 1px solid #c8d8f0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Prominent shadow */
+  text-align: center; /* Center content */
+}
+
+.dataquality-summary h3 {
+  font-size: 1.6rem; /* Larger font */
+  font-weight: 700;
+  color: #1a4a8a; /* Darker blue */
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1); /* Subtle text shadow */
+}
+
+.dataquality-metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem; /* Increased gap */
+}
+
+@media (min-width: 768px) {
+  .dataquality-metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.dataquality-metric {
+  text-align: center;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.dataquality-metric:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dataquality-metric-value {
+  font-size: 2.2rem; /* Much larger for impact */
+  font-weight: 800; /* Extra bold */
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle text shadow */
+}
+
+.dataquality-metric-value.blue {
+  color: #2980b9; 
+}
+
+.dataquality-metric-value.green {
+  color: #27ae60; 
+}
+
+.dataquality-metric-value.purple {
+  color: #8e44ad;
+}
+
+.dataquality-metric-value.red {
+  color: #d78c8c;
+}
+
+.dataquality-metric-value.orange {
+  color: #e6ba37;
+}
+
+.dataquality-metric-value.light-purple {
+  color: #cc91e8; 
+}
+
+
+.dataquality-metric-label {
+  font-size: 1rem; /* Slightly larger */
+  color: #555;
+  font-weight: 500;
+}
